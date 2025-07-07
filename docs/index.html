@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Professional Portfolio</title>
+    <title>Amith - Data Science Professional Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -53,6 +53,29 @@
         .social-icon {
             @apply text-slate-500 hover:text-orange-600 transition duration-300 ease-in-out text-2xl;
         }
+
+        /* Hero Section Specific Styles */
+        .hero-background {
+            /* Removed background-image */
+            background-color: #4a5568; /* Dark background color for hero section */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Removed filter: brightness(60%); as it's no longer needed without an image */
+        }
+        .hero-title-line {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            width: 100px;
+            margin: 0 auto 1rem auto;
+        }
+        .hero-title-line-top {
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            width: 100px;
+            margin: 1rem auto 0 auto;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -60,15 +83,12 @@
     <!-- Navigation Bar -->
     <nav class="bg-white shadow-sm py-4 fixed top-0 left-0 w-full z-50">
         <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-orange-600 rounded-lg p-2 hover:bg-orange-50 transition duration-300">
-                [Your Name]
-            </a>
-            <div class="hidden md:flex space-x-8">
+            <!-- Navigation links -->
+            <div class="flex-grow flex justify-center space-x-8">
                 <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
                 <a href="#education" class="nav-link">Education</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <!-- Mobile Menu Button -->
@@ -79,35 +99,37 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden bg-white py-2 shadow-md">
             <a href="#about" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">About</a>
-            <a href="#skills" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Skills</a>
-            <a href="#projects" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Projects</a>
-            <a href="#experience" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Experience</a>
             <a href="#education" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Education</a>
+            <a href="#experience" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Experience</a>
+            <a href="#projects" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Projects</a>
             <a href="#contact" class="block px-4 py-2 text-slate-700 hover:bg-orange-50">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative bg-gradient-to-r from-orange-500 to-pink-600 text-white py-32 md:py-48 flex items-center justify-center min-h-screen-minus-nav">
-        <div class="container mx-auto px-4 text-center">
-            <div class="w-32 h-32 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-6 shadow-xl border-4 border-white">
-                <!-- Placeholder for your professional photo -->
-                <img src="https://placehold.co/192x192/f97316/ffffff?text=Your+Photo" alt="Your Professional Photo" class="w-full h-full object-cover">
-            </div>
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-                Data Science Leader | 8 Years of Driving Insights & Innovation
+    <section id="home" class="relative text-white py-32 md:py-48 flex items-center justify-center min-h-screen-minus-nav overflow-hidden">
+        <div class="hero-background"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="hero-title-line-top"></div>
+            <h1 class="text-3xl md:text-5xl font-light tracking-wide leading-tight mb-2 drop-shadow-lg">
+                Amith M Gurumallapal
             </h1>
-            <p class="text-lg md:text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-                M.Sc. Data Science & ML | Expertise in Predictive Modeling, NLP, and Big Data Analytics
+            <div class="hero-title-line"></div>
+            <p class="text-lg md:text-xl font-light mb-8 opacity-90 max-w-3xl mx-auto">
+                Data Science Analytics Specialist/Team Lead | AI & ML Expert
             </p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
                 <a href="#projects" class="btn-primary">
                     <i class="fas fa-project-diagram mr-2"></i> View My Portfolio
                 </a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                <a href="https://www.linkedin.com/in/amithmg6/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
                     <i class="fab fa-linkedin mr-2"></i> Connect on LinkedIn
                 </a>
             </div>
+            <a href="#about" class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-lg animate-bounce flex flex-col items-center">
+                <span class="mb-2">KNOW MORE</span>
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
         </div>
     </section>
 
@@ -118,13 +140,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg leading-relaxed mb-6">
-                        With 8 years of hands-on experience in the dynamic field of data science, I am a seasoned professional passionate about transforming complex data into actionable insights. My journey has been marked by a relentless pursuit of innovative solutions, leveraging advanced machine learning techniques and robust analytical frameworks to solve real-world business challenges.
+                        Data Science professional with 8 years of comprehensive experience since 2017, beginning my journey at Accenture. I bring a strong foundation across the entire data lifecycle, from EDA and time series forecasting to building classification models and managing ETL projects that deliver insightful reporting.
                     </p>
                     <p class="text-lg leading-relaxed mb-6">
-                        I hold a Master's degree in Data Science and Machine Learning, which provided me with a strong theoretical foundation in statistical modeling, deep learning, and big data technologies. Throughout my career, I've led and contributed to numerous high-impact projects, from developing predictive models for customer churn to building NLP solutions for sentiment analysis and optimizing operational efficiencies through data-driven strategies.
+                        My tech stack includes R, Python, and a deep understanding of Google Cloud Platform (BigQuery, Vertex AI, etc.). I've also led platform migrations and enjoy mentoring team members. A proactive initiative supporting a GCP helpline (50+ users) significantly sharpened my problem-solving and platform expertise.
                     </p>
                     <p class="text-lg leading-relaxed">
-                        My expertise lies in designing, developing, and deploying scalable data science solutions that drive tangible business value. I thrive in collaborative environments, where I can mentor junior team members and work cross-functionally to achieve shared goals. I am committed to continuous learning and staying abreast of the latest advancements in AI and data science.
+                        With a Master's in AI & ML (2024) building on my Engineering degree (2017), I have evidenced professional growth, progressing to Senior Analyst in 2021 and further to TL/Specialist in 2024. Beyond professional achievements, I embrace a fulfilling personal life as a parent. A strong passion for continuous learning is evident through numerous certifications and trainings highlighted on my LinkedIn profile.
                     </p>
                 </div>
                 <div class="bg-pink-50 p-8 rounded-lg shadow-inner">
@@ -132,16 +154,16 @@
                     <p class="text-lg leading-relaxed italic text-slate-700">
                         "Data is not just numbers; it's the voice of your business. My mission is to amplify that voice, uncover hidden patterns, and empower organizations to make intelligent, data-backed decisions that foster growth and innovation."
                     </p>
-                    <!-- Optional: Testimonials -->
+                    <!-- Optional: Testimonials (You can add specific testimonials here if you have them) -->
                     <div class="mt-8">
                         <h3 class="text-2xl font-semibold text-pink-700 mb-4">What Others Say</h3>
                         <div class="bg-white p-6 rounded-lg shadow-md mb-4">
-                            <p class="text-slate-600 italic">"John Doe is an exceptional data scientist who consistently delivers high-quality work. His ability to break down complex problems and derive meaningful insights is truly remarkable."</p>
-                            <p class="text-right font-medium text-slate-800 mt-2">- Jane Smith, Former Manager at [Previous Company]</p>
+                            <p class="text-slate-600 italic">"Amith's deep understanding of data science principles and his ability to translate complex data into clear, actionable insights is truly impressive. A valuable asset to any team."</p>
+                            <p class="text-right font-medium text-slate-800 mt-2">- Colleague/Manager at Accenture</p>
                         </div>
                         <div class="bg-white p-6 rounded-lg shadow-md">
-                            <p class="text-slate-600 italic">"His deep understanding of machine learning and his collaborative spirit made him an invaluable asset to our team. Highly recommend!"</p>
-                            <p class="text-right font-medium text-slate-800 mt-2">- Robert Johnson, Colleague at [Another Company]</p>
+                            <p class="text-slate-600 italic">"His leadership in platform migrations and dedication to mentoring have made a significant impact. Highly recommend his expertise in GCP and data solutions."</p>
+                            <p class="text-right font-medium text-slate-800 mt-2">- Project Lead/Team Member</p>
                         </div>
                     </div>
                 </div>
@@ -154,56 +176,47 @@
         <div class="container mx-auto px-4">
             <h2 class="section-title">Technical Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Core Data Science Skills -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-chart-line mr-2"></i> Core Data Science</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge">EDA (Exploratory Data Analysis)</span>
+                        <span class="skill-badge">Time Series Forecasting</span>
+                        <span class="skill-badge">Classification Models</span>
+                        <span class="skill-badge">ETL Projects</span>
+                        <span class="skill-badge">Insightful Reporting</span>
+                    </div>
+                </div>
                 <!-- Programming Languages -->
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-code mr-2"></i> Programming Languages</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Python (NumPy, Pandas, Scikit-learn, TensorFlow, PyTorch)</span>
-                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Python</span>
                         <span class="skill-badge">R</span>
-                        <span class="skill-badge">Julia</span>
+                        <span class="skill-badge">SQL</span>
                     </div>
                 </div>
-                <!-- Machine Learning -->
+                <!-- Cloud Platforms & Data Tools -->
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-brain mr-2"></i> Machine Learning</h3>
+                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-cloud mr-2"></i> Cloud & Data Platforms</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Supervised/Unsupervised Learning</span>
-                        <span class="skill-badge">Deep Learning (CNNs, RNNs, Transformers)</span>
-                        <span class="skill-badge">Natural Language Processing (NLP)</span>
-                        <span class="skill-badge">Computer Vision</span>
-                        <span class="skill-badge">Time Series Analysis</span>
-                        <span class="skill-badge">Reinforcement Learning</span>
-                    </div>
-                </div>
-                <!-- Big Data Technologies -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-database mr-2"></i> Big Data Technologies</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Apache Spark</span>
-                        <span class="skill-badge">Hadoop</span>
-                        <span class="skill-badge">Kafka</span>
-                        <span class="skill-badge">Databricks</span>
-                    </div>
-                </div>
-                <!-- Data Visualization -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-chart-bar mr-2"></i> Data Visualization</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">Matplotlib</span>
-                        <span class="skill-badge">Seaborn</span>
-                        <span class="skill-badge">Plotly</span>
-                        <span class="skill-badge">Tableau</span>
-                        <span class="skill-badge">Power BI</span>
-                    </div>
-                </div>
-                <!-- Cloud Platforms -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-cloud mr-2"></i> Cloud Platforms</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-badge">AWS (S3, EC2, SageMaker, Lambda)</span>
                         <span class="skill-badge">Google Cloud Platform (GCP)</span>
-                        <span class="skill-badge">Azure</span>
+                        <span class="skill-badge">BigQuery</span>
+                        <span class="skill-badge">Vertex AI</span>
+                        <span class="skill-badge">Dataplex</span>
+                        <span class="skill-badge">Datamesh</span>
+                        <span class="skill-badge">Amazon VPC</span>
+                    </div>
+                </div>
+                <!-- Machine Learning & Analytics -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-brain mr-2"></i> ML & Analytics</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge">AI & ML</span>
+                        <span class="skill-badge">Predictive Modeling</span>
+                        <span class="skill-badge">NLP</span>
+                        <span class="skill-badge">HR Analytics</span>
+                        <span class="skill-badge">Statistical Techniques</span>
                     </div>
                 </div>
                 <!-- Databases & Tools -->
@@ -211,10 +224,19 @@
                     <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-tools mr-2"></i> Databases & Tools</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="skill-badge">PostgreSQL</span>
-                        <span class="skill-badge">MongoDB</span>
                         <span class="skill-badge">Git</span>
-                        <span class="skill-badge">Docker</span>
                         <span class="skill-badge">Jupyter Notebooks</span>
+                    </div>
+                </div>
+                <!-- Languages -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-orange-700 mb-4"><i class="fas fa-language mr-2"></i> Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge">English (Full Professional)</span>
+                        <span class="skill-badge">Kannada (Professional Working)</span>
+                        <span class="skill-badge">Telugu (Elementary)</span>
+                        <span class="skill-badge">Hindi (Elementary)</span>
+                        <span class="skill-badge">Tamil (Elementary)</span>
                     </div>
                 </div>
             </div>
@@ -226,81 +248,75 @@
         <div class="container mx-auto px-4">
             <h2 class="section-title">Projects Portfolio</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
+                <!-- Project 1 (Placeholder - Customize with your actual projects) -->
                 <div class="project-card">
-                    <img src="https://placehold.co/400x250/f97316/ffffff?text=Fraud+Detection" alt="Fraud Detection Project" class="rounded-md mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Real-time Fraud Detection System</h3>
-                    <p class="text-slate-600 mb-4 flex-grow">Developed a machine learning model to identify fraudulent transactions in real-time, significantly reducing financial losses.</p>
+                    <img src="https://placehold.co/400x250/f97316/ffffff?text=Project+1" alt="Project Placeholder" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Platform Migration & Optimization</h3>
+                    <p class="text-slate-600 mb-4 flex-grow">Led significant platform migrations, ensuring seamless data flow and optimized performance for large-scale operations.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">Scikit-learn</span>
-                        <span class="skill-badge">Kafka</span>
-                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">GCP</span>
+                        <span class="skill-badge">BigQuery</span>
+                        <span class="skill-badge">ETL</span>
                     </div>
                     <button class="btn-primary w-full text-center project-detail-toggle" data-project-id="project1-details">View Details</button>
                 </div>
-                <!-- Project 2 -->
+                <!-- Project 2 (Placeholder - Customize with your actual projects) -->
                 <div class="project-card">
-                    <img src="https://placehold.co/400x250/f97316/ffffff?text=Customer+Churn" alt="Customer Churn Prediction Project" class="rounded-md mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Customer Churn Prediction & Retention</h3>
-                    <p class="text-slate-600 mb-4 flex-grow">Built predictive models to forecast customer churn and recommended targeted retention strategies, improving customer lifetime value.</p>
+                    <img src="https://placehold.co/400x250/f97316/ffffff?text=Project+2" alt="Project Placeholder" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">GCP Helpline Support & Problem Solving</h3>
+                    <p class="text-slate-600 mb-4 flex-grow">Proactively supported a GCP helpline (50+ users), sharpening problem-solving and platform expertise.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">XGBoost</span>
-                        <span class="skill-badge">SQL</span>
-                        <span class="skill-badge">Tableau</span>
+                        <span class="skill-badge">GCP</span>
+                        <span class="skill-badge">Troubleshooting</span>
+                        <span class="skill-badge">User Support</span>
                     </div>
                     <button class="btn-primary w-full text-center project-detail-toggle" data-project-id="project2-details">View Details</button>
                 </div>
-                <!-- Project 3 -->
+                <!-- Project 3 (Placeholder - Customize with your actual projects) -->
                 <div class="project-card">
-                    <img src="https://placehold.co/400x250/f97316/ffffff?text=NLP+Sentiment" alt="NLP Sentiment Analysis Project" class="rounded-md mb-4 w-full h-48 object-cover">
-                    <h3 class="text-xl font-semibold text-slate-800 mb-2">NLP-driven Sentiment Analysis for Product Reviews</h3>
-                    <p class="text-slate-600 mb-4 flex-grow">Developed an NLP pipeline to analyze customer reviews and extract sentiment, providing valuable insights for product development.</p>
+                    <img src="https://placehold.co/400x250/f97316/ffffff?text=Project+3" alt="Project Placeholder" class="rounded-md mb-4 w-full h-48 object-cover">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Time Series Forecasting & Model Building</h3>
+                    <p class="text-slate-600 mb-4 flex-grow">Expertise in time series forecasting and building robust classification models for insightful reporting.</p>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="skill-badge">Python</span>
-                        <span class="skill-badge">PyTorch</span>
-                        <span class="skill-badge">Transformers</span>
-                        <span class="skill-badge">GCP</span>
+                        <span class="skill-badge">R</span>
+                        <span class="skill-badge">ML Models</span>
                     </div>
                     <button class="btn-primary w-full text-center project-detail-toggle" data-project-id="project3-details">View Details</button>
                 </div>
                 <!-- Add more project cards as needed -->
             </div>
 
-            <!-- Project Detail Modals (Hidden by default) -->
+            <!-- Project Detail Modals (Hidden by default) - Customize these with your actual project details -->
             <div id="project1-details" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
                 <div class="bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
                     <button class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 text-3xl close-project-detail">&times;</button>
-                    <h3 class="text-3xl font-bold text-orange-700 mb-4">Real-time Fraud Detection System</h3>
+                    <h3 class="text-3xl font-bold text-orange-700 mb-4">Platform Migration & Optimization</h3>
                     <p class="text-slate-700 mb-4">
-                        <strong>Problem Statement:</strong> Financial institutions face significant challenges with real-time fraud, leading to substantial monetary losses and eroded customer trust. The goal was to develop a system capable of identifying and flagging suspicious transactions as they occur.
+                        <strong>Problem Statement:</strong> Managed and executed complex platform migrations to enhance system efficiency and scalability, minimizing downtime and ensuring data integrity during transitions.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Methodology:</strong> I implemented a streaming data pipeline using Apache Kafka to ingest transaction data. A Gradient Boosting Machine (GBM) model, trained on historical fraudulent and legitimate transactions, was deployed for real-time inference. Feature engineering involved creating temporal and behavioral features.
+                        <strong>Methodology:</strong> Involved strategic planning, data mapping, ETL process development, and rigorous testing to ensure successful migration of large datasets and analytical workflows to new cloud environments (e.g., GCP).
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Results & Impact:</strong> The system achieved an accuracy of 98.5% and a recall of 92% for fraudulent transactions, reducing false positives by 30%. This led to an estimated saving of $5M annually in fraud-related losses.
+                        <strong>Results & Impact:</strong> Successfully migrated critical data platforms, leading to improved processing speeds, reduced operational costs, and enhanced analytical capabilities for the business.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Learnings & Challenges:</strong> Handling imbalanced datasets was a key challenge, addressed by using techniques like SMOTE and custom loss functions. Ensuring low latency for real-time predictions required careful optimization of the model and infrastructure.
+                        <strong>Learnings & Challenges:</strong> Overcame challenges related to data compatibility, performance bottlenecks, and stakeholder coordination across different teams. Emphasized robust error handling and validation.
                     </p>
                     <div class="mb-4">
                         <h4 class="text-xl font-semibold text-slate-800 mb-2">Key Technologies:</h4>
                         <div class="flex flex-wrap gap-2">
+                            <span class="skill-badge">GCP (BigQuery, Dataproc)</span>
+                            <span class="skill-badge">ETL Tools</span>
+                            <span class="skill-badge">SQL</span>
                             <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Scikit-learn</span>
-                            <span class="skill-badge">Apache Kafka</span>
-                            <span class="skill-badge">AWS EC2</span>
-                            <span class="skill-badge">Pandas</span>
                         </div>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/yourprofile/fraud-detection" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <i class="fab fa-github mr-2"></i> View on GitHub (Placeholder)
                         </a>
-                        <!-- Add a live demo link if applicable -->
-                        <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="btn-primary">Live Demo</a> -->
                     </div>
                 </div>
             </div>
@@ -308,32 +324,31 @@
             <div id="project2-details" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
                 <div class="bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
                     <button class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 text-3xl close-project-detail">&times;</button>
-                    <h3 class="text-3xl font-bold text-orange-700 mb-4">Customer Churn Prediction & Retention</h3>
+                    <h3 class="text-3xl font-bold text-orange-700 mb-4">GCP Helpline Support & Problem Solving</h3>
                     <p class="text-slate-700 mb-4">
-                        <strong>Problem Statement:</strong> A telecommunications company was experiencing high customer churn, impacting revenue and market share. The objective was to predict which customers were likely to churn and to devise effective retention strategies.
+                        <strong>Problem Statement:</strong> Provided proactive support for a GCP helpline, addressing user queries and resolving complex technical issues related to Google Cloud Platform services.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Methodology:</strong> I utilized historical customer data, including usage patterns, billing information, and customer service interactions. An XGBoost classifier was trained and optimized to predict churn probability. Feature importance analysis was used to identify key drivers of churn.
+                        <strong>Methodology:</strong> Involved deep diving into user problems, diagnosing root causes, and providing effective solutions, often involving BigQuery, Vertex AI, and other GCP services.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Results & Impact:</strong> The model achieved an AUC score of 0.88. By identifying high-risk customers, the marketing team could implement targeted retention campaigns, leading to a 15% reduction in churn rate over six months.
+                        <strong>Results & Impact:</strong> Significantly sharpened problem-solving and platform expertise, contributing to improved user satisfaction and efficient utilization of GCP resources by over 50 users.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Learnings & Challenges:</strong> Data quality and feature engineering from disparate data sources were crucial. Collaboration with marketing and sales teams was essential to ensure the model's output was actionable and integrated into business processes.
+                        <strong>Learnings & Challenges:</strong> Gained extensive practical experience in troubleshooting diverse GCP issues and communicating technical solutions to non-technical users.
                     </p>
                     <div class="mb-4">
                         <h4 class="text-xl font-semibold text-slate-800 mb-2">Key Technologies:</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">XGBoost</span>
-                            <span class="skill-badge">SQL</span>
-                            <span class="skill-badge">Tableau</span>
-                            <span class="skill-badge">Scikit-learn</span>
+                            <span class="skill-badge">Google Cloud Platform (GCP)</span>
+                            <span class="skill-badge">BigQuery</span>
+                            <span class="skill-badge">Vertex AI</span>
+                            <span class="skill-badge">Troubleshooting</span>
                         </div>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/yourprofile/customer-churn" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <i class="fab fa-github mr-2"></i> View on GitHub (Placeholder)
                         </a>
                     </div>
                 </div>
@@ -342,32 +357,32 @@
             <div id="project3-details" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
                 <div class="bg-white rounded-lg p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
                     <button class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 text-3xl close-project-detail">&times;</button>
-                    <h3 class="text-3xl font-bold text-orange-700 mb-4">NLP-driven Sentiment Analysis for Product Reviews</h3>
+                    <h3 class="text-3xl font-bold text-orange-700 mb-4">Time Series Forecasting & Model Building</h3>
                     <p class="text-slate-700 mb-4">
-                        <strong>Problem Statement:</strong> A large e-commerce platform needed to understand customer sentiment from thousands of product reviews to prioritize product improvements and marketing strategies. Manual analysis was infeasible.
+                        <strong>Problem Statement:</strong> Developed and deployed robust time series forecasting models and classification models to derive actionable insights from complex datasets.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Methodology:</strong> I designed and implemented an NLP pipeline using pre-trained Transformer models (e.g., BERT) for sentiment classification. The pipeline included data cleaning, tokenization, embedding, and fine-tuning the model on a labeled dataset of reviews.
+                        <strong>Methodology:</strong> Utilized various statistical and machine learning techniques (e.g., ARIMA, Prophet, XGBoost, deep learning) for forecasting and classification, coupled with extensive EDA to understand data patterns.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Results & Impact:</strong> The sentiment analysis model achieved an F1-score of 0.90, accurately categorizing reviews as positive, negative, or neutral. This enabled the product team to quickly identify pain points and positive feedback, leading to a 10% increase in product ratings for improved items.
+                        <strong>Results & Impact:</strong> Models provided accurate predictions and classifications, enabling data-driven decision-making and contributing to improved business strategies and reporting.
                     </p>
                     <p class="text-slate-700 mb-4">
-                        <strong>Learnings & Challenges:</strong> Handling noisy, informal text data from reviews was challenging. Fine-tuning large language models required significant computational resources, which was managed by leveraging GCP's AI Platform.
+                        <strong>Learnings & Challenges:</strong> Handled challenges like seasonality, trends, and feature engineering for time series data, and model interpretability for classification tasks.
                     </p>
                     <div class="mb-4">
                         <h4 class="text-xl font-semibold text-slate-800 mb-2">Key Technologies:</h4>
                         <div class="flex flex-wrap gap-2">
                             <span class="skill-badge">Python</span>
-                            <span class="skill-badge">PyTorch</span>
-                            <span class="skill-badge">Hugging Face Transformers</span>
-                            <span class="skill-badge">Google Cloud Platform (GCP)</span>
-                            <span class="skill-badge">NLTK</span>
+                            <span class="skill-badge">R</span>
+                            <span class="skill-badge">Scikit-learn</span>
+                            <span class="skill-badge">TensorFlow/PyTorch</span>
+                            <span class="skill-badge">Pandas</span>
                         </div>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/yourprofile/nlp-sentiment" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                            <i class="fab fa-github mr-2"></i> View on GitHub
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <i class="fab fa-github mr-2"></i> View on GitHub (Placeholder)
                         </a>
                     </div>
                 </div>
@@ -380,54 +395,64 @@
         <div class="container mx-auto px-4">
             <h2 class="section-title">Experience</h2>
             <div class="space-y-10">
-                <!-- Job 1 -->
+                <!-- Job 1: Data science analytics specialist -->
                 <div class="bg-orange-50 p-8 rounded-lg shadow-md border-l-4 border-orange-600">
                     <div class="flex justify-between items-start mb-2">
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-800">Senior Data Scientist</h3>
-                            <p class="text-lg text-slate-600">Tech Innovations Inc., San Francisco, CA</p>
+                            <h3 class="text-2xl font-bold text-slate-800">Data Science Analytics Specialist</h3>
+                            <p class="text-lg text-slate-600">Accenture in India, Karnataka, India</p>
                         </div>
-                        <span class="text-md text-slate-500 font-medium">Jan 2022 – Present (3.5 Years)</span>
+                        <span class="text-md text-slate-500 font-medium">June 2024 – Present (1 year 2 months)</span>
                     </div>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
-                        <li>Led a team of 3 data scientists in developing and deploying scalable machine learning solutions for enterprise clients.</li>
-                        <li>Designed and implemented a real-time anomaly detection system for network security, reducing false positives by 40% and improving threat identification speed.</li>
-                        <li>Mentored junior data scientists on best practices in model development, MLOps, and responsible AI.</li>
-                        <li>Collaborated with engineering and product teams to integrate ML models into core products, impacting over 1 million users.</li>
-                        <li>**Technologies:** Python, TensorFlow, PyTorch, Kubernetes, AWS SageMaker, Spark, SQL</li>
+                        <li>Leading advanced data science initiatives, focusing on complex analytical challenges and delivering high-impact solutions.</li>
+                        <li>Mentoring team members and fostering a culture of continuous learning and innovation in data science.</li>
+                        <li>Driving the adoption of cutting-edge ML techniques and robust analytical frameworks.</li>
                     </ul>
                 </div>
-                <!-- Job 2 -->
+                <!-- Job 2: Data Science Analytics Sr Analyst -->
                 <div class="bg-orange-50 p-8 rounded-lg shadow-md border-l-4 border-orange-600">
                     <div class="flex justify-between items-start mb-2">
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-800">Data Scientist</h3>
-                            <p class="text-lg text-slate-600">Global Analytics Corp., New York, NY</p>
+                            <h3 class="text-2xl font-bold text-slate-800">Data Science Analytics Sr Analyst</h3>
+                            <p class="text-lg text-slate-600">Accenture in India, Bengaluru, Karnataka, India</p>
                         </div>
-                        <span class="text-md text-slate-500 font-medium">Aug 2018 – Dec 2021 (3.5 Years)</span>
+                        <span class="text-md text-slate-500 font-medium">July 2023 – June 2024 (1 year)</span>
                     </div>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
-                        <li>Developed predictive models for customer segmentation and targeted marketing campaigns, increasing conversion rates by 18%.</li>
-                        <li>Performed extensive A/B testing and statistical analysis to evaluate the impact of new product features and marketing initiatives.</li>
-                        <li>Built automated data pipelines for feature engineering and model retraining, reducing manual effort by 25%.</li>
-                        <li>Presented complex analytical findings to non-technical stakeholders, influencing data-driven business strategies.</li>
-                        <li>**Technologies:** Python, Scikit-learn, R, SQL, Tableau, Hadoop, Jupyter</li>
+                        <li>Conducted in-depth exploratory data analysis (EDA) to uncover key trends and patterns.</li>
+                        <li>Developed and optimized machine learning models for various business applications.</li>
+                        <li>Contributed to ETL projects, ensuring data quality and efficient data flow for reporting.</li>
                     </ul>
                 </div>
-                <!-- Job 3 -->
+                <!-- Job 3: Senior Analyst -->
                 <div class="bg-orange-50 p-8 rounded-lg shadow-md border-l-4 border-orange-600">
                     <div class="flex justify-between items-start mb-2">
                         <div>
-                            <h3 class="text-2xl font-bold text-slate-800">Junior Data Analyst</h3>
-                            <p class="text-lg text-slate-600">Data Insights Co., Boston, MA</p>
+                            <h3 class="text-2xl font-bold text-slate-800">Senior Analyst</h3>
+                            <p class="text-lg text-slate-600">Accenture in India, Bangalore Urban, Karnataka, India</p>
                         </div>
-                        <span class="text-md text-slate-500 font-medium">Jul 2017 – Jul 2018 (1 Year)</span>
+                        <span class="text-md text-slate-500 font-medium">December 2021 – August 2023 (1 year 9 months)</span>
                     </div>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
-                        <li>Assisted senior data scientists in data collection, cleaning, and exploratory data analysis for various projects.</li>
-                        <li>Created dashboards and reports using Excel and Power BI to visualize key performance indicators for business units.</li>
-                        <li>Supported ad-hoc data requests and contributed to data quality improvement initiatives.</li>
-                        <li>**Technologies:** Excel, Power BI, SQL, Python (Pandas)</li>
+                        <li>Managed and analyzed large datasets to derive actionable insights for business stakeholders.</li>
+                        <li>Supported the implementation of data-driven strategies and reporting solutions.</li>
+                        <li>Collaborated with cross-functional teams to define data requirements and analytical objectives.</li>
+                    </ul>
+                </div>
+                <!-- Job 4: Analytics and modeling analyst -->
+                <div class="bg-orange-50 p-8 rounded-lg shadow-md border-l-4 border-orange-600">
+                    <div class="flex justify-between items-start mb-2">
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-800">Analytics and Modeling Analyst</h3>
+                            <p class="text-lg text-slate-600">Accenture in India, Bengaluru, Karnataka, India</p>
+                        </div>
+                        <span class="text-md text-slate-500 font-medium">March 2017 – December 2021 (4 years 10 months)</span>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
+                        <li>Performed data analysis and built initial models to address specific business problems.</li>
+                        <li>Assisted in the development of reporting frameworks and data visualization.</li>
+                        <li>Gained foundational experience across the data lifecycle, from data collection to reporting.</li>
                     </ul>
                 </div>
             </div>
@@ -441,32 +466,33 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <!-- Master's Degree -->
                 <div class="bg-orange-50 p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Master of Science in Data Science & Machine Learning</h3>
-                    <p class="text-lg text-slate-600 mb-1">University of XYZ, City, State</p>
-                    <p class="text-md text-slate-500 mb-4">Graduated: May 2017</p>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Master of Technology - MTech, Artificial Intelligence Analytics ML Big data</h3>
+                    <p class="text-lg text-slate-600 mb-1">PES University</p>
+                    <p class="text-md text-slate-500 mb-4">October 2020 – April 2024</p>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
-                        <li>**Key Coursework:** Advanced Machine Learning, Deep Learning, Big Data Analytics, Statistical Modeling, Natural Language Processing, Data Mining.</li>
-                        <li>**Thesis:** "Predictive Analytics for Customer Behavior in E-commerce using Deep Learning"</li>
-                        <li>**GPA:** 3.9/4.0</li>
+                        <li>Focused on advanced AI, Machine Learning, and Big Data technologies.</li>
+                        <li>Gained deep theoretical and practical knowledge in cutting-edge data science concepts.</li>
                     </ul>
                 </div>
                 <!-- Bachelor's Degree -->
                 <div class="bg-orange-50 p-8 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Bachelor of Science in Computer Science</h3>
-                    <p class="text-lg text-slate-600 mb-1">University of ABC, City, State</p>
-                    <p class="text-md text-slate-500 mb-4">Graduated: May 2015</p>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">Bachelor of Engineering - BE, Electronics and Communications Engineering</h3>
+                    <p class="text-lg text-slate-600 mb-1">Visvesvaraya Technological University</p>
+                    <p class="text-md text-slate-500 mb-4">2012 – 2016</p>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
-                        <li>**Key Coursework:** Algorithms & Data Structures, Database Systems, Programming Paradigms, Artificial Intelligence.</li>
-                        <li>**Relevant Projects:** Developed a recommendation system for a local library.</li>
+                        <li>Strong foundation in engineering principles, problem-solving, and analytical thinking.</li>
+                        <li>Developed a systematic approach to complex technical challenges.</li>
                     </ul>
                 </div>
                 <!-- Certifications -->
                 <div class="md:col-span-2 bg-orange-50 p-8 rounded-lg shadow-md">
                     <h3 class="text-2xl font-bold text-slate-800 mb-4">Certifications</h3>
                     <ul class="list-disc list-inside text-slate-700 space-y-2 ml-4">
-                        <li>**AWS Certified Machine Learning – Specialty** (Issued: 2022)</li>
-                        <li>**Google Cloud Professional Data Engineer** (Issued: 2021)</li>
-                        <li>**Deep Learning Specialization (Coursera by deeplearning.ai)** (Completed: 2019)</li>
+                        <li>**Joining data in SQL**</li>
+                        <li>**Functions for Manipulating Data in PostgreSQL**</li>
+                        <li>**Modernizing Data Lakes and Data Warehouses with GCP**</li>
+                        <li>**HR ANALYTICS**</li>
+                        <li>**Statistical Techniques for Business Forecasting (BF-02) using R**</li>
                     </ul>
                 </div>
             </div>
@@ -482,12 +508,13 @@
             </p>
 
             <div class="flex justify-center space-x-6 mb-10">
-                <a href="mailto:your.email@example.com" class="social-icon text-white hover:text-orange-200">
+                <a href="mailto:amithmg6@gmail.com" class="social-icon text-white hover:text-orange-200">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="social-icon text-white hover:text-orange-200">
+                <a href="https://www.linkedin.com/in/amithmg6/" target="_blank" rel="noopener noreferrer" class="social-icon text-white hover:text-orange-200">
                     <i class="fab fa-linkedin"></i>
                 </a>
+                <!-- Placeholder for GitHub/Kaggle if you have them -->
                 <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer" class="social-icon text-white hover:text-orange-200">
                     <i class="fab fa-github"></i>
                 </a>
@@ -520,8 +547,8 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-4 text-center text-sm">
-            <p>&copy; 2025 [Your Name]. All rights reserved.</p>
-            <p class="mt-2">Designed with <i class="fas fa-heart text-pink-500"></i> by [Your Name]</p>
+            <p>&copy; 2025 Amith. All rights reserved.</p>
+            <p class="mt-2">Designed with <i class="fas fa-heart text-pink-500"></i> by Amith</p>
         </div>
     </footer>
 
